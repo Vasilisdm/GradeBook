@@ -7,7 +7,7 @@ namespace GradeBook
     {
         public void AddGrade(double grade)
         {
-            grades.add(grade);
+            grades.Add(grade);
         }
 
         List<double> grades;
