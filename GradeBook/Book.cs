@@ -16,6 +16,11 @@ namespace GradeBook
             grades.Add(grade);
         }
 
+        public void ShowStatistics()
+        {
+            throw new NotImplementedException();
+        }
+
         private List<double> grades;
         private string name;
     }
