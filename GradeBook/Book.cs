@@ -1,13 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace GradeBook
 {
     public class Book
     {
-
-        internal void AddGrade(double grade)
+        public void AddGrade(double grade)
         {
-            
+            grades.add(grade);
         }
+
+        List<double> grades;
     }
 }
