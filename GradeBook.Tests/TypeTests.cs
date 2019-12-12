@@ -6,17 +6,22 @@ namespace GradeBook.Tests
     public class TypeTests
     {
         [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            string name = "John";
+            var upperName = MakeUpperCase(name);
+
+            Assert.Equal("John", name);
+            Assert.Equal("JOHN", upperName);
+        }
+
+        [Fact]
         public void PassingByRef()
         {
             var book = new Book("Book");
             GetBookSetName(out book, "Da Vinci Code");
 
             Assert.Equal(book.Name, "Da Vinci Code");
-        }
-
-        private void GetBookSetName(out Book book, string name)
-        {
-            book = new Book(name);
         }
 
         [Fact]
@@ -37,6 +42,16 @@ namespace GradeBook.Tests
             SetName(book, "new book name");
 
             Assert.Equal("new book name", book.Name);
+        }
+
+        private object MakeUpperCase(string parameter)
+        {
+            return parameter.ToUpper();
+        }
+
+        private void GetBookSetName(out Book book, string name)
+        {
+            book = new Book(name);
         }
 
         private void SetName(Book book, string name)
