@@ -16,6 +16,10 @@ namespace GradeBook.Tests
 
             // Act
             var result = book.GetStatistics();
+
+            // Assert
+            Assert.Equal(result.Low, 77.8);
+            Assert.Equal(result.High, 98.8);
         }
     }
 }
