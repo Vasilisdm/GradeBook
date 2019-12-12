@@ -6,6 +6,20 @@ namespace GradeBook.Tests
     public class TypeTests
     {
         [Fact]
+        public void PassingByRef()
+        {
+            var book = new Book("Book");
+            GetBookSetName(out book, "Da Vinci Code");
+
+            Assert.Equal(book.Name, "Da Vinci Code");
+        }
+
+        private void GetBookSetName(out Book book, string name)
+        {
+            book = new Book(name);
+        }
+
+        [Fact]
         public void GetBookReturnsDifferentObjects()
         {
             var book = GetBook("Book1");
