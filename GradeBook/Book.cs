@@ -5,19 +5,7 @@ namespace GradeBook
 {
     public class Book
     {
-        public string Name {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (!String.IsNullOrEmpty(value))
-                {
-                    name = value;
-                }
-            }
-        }
+        public string Name { get; private set; }
 
         public Book(string name)
         {
@@ -95,6 +83,5 @@ namespace GradeBook
         }
 
         private List<double> grades;
-        private string name;
     }
 }
