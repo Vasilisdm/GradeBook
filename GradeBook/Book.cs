@@ -5,6 +5,20 @@ namespace GradeBook
 {
     public class Book
     {
+        public string Name {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (!String.IsNullOrEmpty(value))
+                {
+                    name = value;
+                }
+            }
+        }
+
         public Book(string name)
         {
             grades = new List<double>();
@@ -81,6 +95,6 @@ namespace GradeBook
         }
 
         private List<double> grades;
-        public string Name;
+        private string name;
     }
 }
