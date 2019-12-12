@@ -16,7 +16,7 @@ namespace GradeBook
             grades.Add(grade);
         }
 
-        public void ShowStatistics()
+        public void GetStatistics()
         {
             var average = 0.0;
             var highGrade = double.MinValue;
