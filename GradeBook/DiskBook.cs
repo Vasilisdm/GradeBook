@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 namespace GradeBook
 {
     public class DiskBook : Book
@@ -11,7 +13,8 @@ namespace GradeBook
 
         public override void AddGrade(double grade)
         {
-            throw new NotImplementedException();
+            var writer = File.AppendText($"{Name}.txt");
+            writer.WriteLine(grade);
         }
 
         public override Statistics GetStatistics()
