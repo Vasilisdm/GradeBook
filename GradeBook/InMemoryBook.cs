@@ -5,9 +5,9 @@ namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs eventArgs);
 
-    public class Book : NamedObject
+    public class InMemoryBook : NamedObject
     {
-        public Book(string name) : base(name)
+        public InMemoryBook(string name) : base(name)
         {
             grades = new List<double>();
             Name = name;
