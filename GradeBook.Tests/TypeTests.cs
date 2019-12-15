@@ -45,7 +45,7 @@ namespace GradeBook.Tests
         [Fact]
         public void PassingByRef()
         {
-            var book = new Book("Book");
+            var book = new InMemoryBook("Book");
             GetBookSetName(out book, "Da Vinci Code");
 
             Assert.Equal(book.Name, "Da Vinci Code");
@@ -76,9 +76,9 @@ namespace GradeBook.Tests
             return parameter.ToUpper();
         }
 
-        private void GetBookSetName(out Book book, string name)
+        private void GetBookSetName(out InMemoryBook book, string name)
         {
-            book = new Book(name);
+            book = new InMemoryBook(name);
         }
 
         private void SetName(Book book, string name)
@@ -88,7 +88,7 @@ namespace GradeBook.Tests
 
         private Book GetBook(string name)
         {
-            return new Book(name);
+            return new InMemoryBook(name);
         }
     }
 }
