@@ -5,7 +5,7 @@ namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs eventArgs);
 
-    public class InMemoryBook : NamedObject
+    public class InMemoryBook : Book
     {
         public InMemoryBook(string name) : base(name)
         {
@@ -32,7 +32,7 @@ namespace GradeBook
             }
         }
 
-        public void AddGrade(double grade)
+        public override void AddGrade(double grade)
         {
             if (grade <= 100 && grade >= 0)
             {
@@ -49,9 +49,9 @@ namespace GradeBook
             }
         }
 
-        public event GradeAddedDelegate GradeAdded;
+        public override event GradeAddedDelegate GradeAdded;
 
-        public Statistics GetStatistics()
+        public override Statistics GetStatistics()
         {
             Statistics result = new Statistics();
             result.Average = 0.0;
