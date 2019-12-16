@@ -16,12 +16,9 @@ namespace GradeBook
             using (var writer = File.AppendText($"{Name}.txt"))
             {
                 writer.WriteLine(grade);
+                GradeAdded?.Invoke(this, new EventArgs());
             }
 
-            if (GradeAdded!=null)
-            {
-                GradeAdded(this, new EventArgs());
-            }
         }
 
         public override Statistics GetStatistics()
